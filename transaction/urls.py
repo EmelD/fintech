@@ -1,12 +1,16 @@
 from django.urls import include, path
+from rest_framework import routers
 
 from . import views
 
 
-v1_url_patterns = [
-    path("transactions/", views.my_view, name="index"),
-]
+router = routers.DefaultRouter()
+router.register(r'transactions', views.TransactionViewSet)
 
+
+v1_url_patterns = [
+    path('', include(router.urls)),
+]
 
 urlpatterns = [
     path("v1/", include(v1_url_patterns)),

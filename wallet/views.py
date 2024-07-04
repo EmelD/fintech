@@ -1,5 +1,10 @@
-from django.http import HttpResponse
+from rest_framework import permissions, viewsets
+
+from wallet.models import Wallet
+from wallet.serializers import WalletSerializer
 
 
-def my_view(request):
-    return HttpResponse('')
+class WalletViewSet(viewsets.ModelViewSet):
+    queryset = Wallet.objects.all()
+    serializer_class = WalletSerializer
+    permission_classes = [permissions.AllowAny]

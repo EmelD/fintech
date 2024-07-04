@@ -1,5 +1,10 @@
-from django.http import HttpResponse
+from rest_framework import permissions, viewsets
+
+from transaction.models import Transaction
+from transaction.serializers import TransactionSerializer
 
 
-def my_view(request):
-    return HttpResponse('')
+class TransactionViewSet(viewsets.ModelViewSet):
+    queryset = Transaction.objects.all()
+    serializer_class = TransactionSerializer
+    permission_classes = [permissions.AllowAny]
