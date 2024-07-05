@@ -11,3 +11,13 @@ services:
       MYSQL_DATABASE: fintech
       MYSQL_USER: fintech
       MYSQL_PASSWORD: fintech
+  test_db:
+    image: mysql
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: fintech_test
+      MYSQL_USER: fintech
+      MYSQL_PASSWORD: fintech

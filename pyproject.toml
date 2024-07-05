@@ -16,6 +16,9 @@ mypy = "^1.10.1"
 flake8 = "^7.1.0"
 black = "^24.4.2"
 isort = "^5.13.2"
+pytest = "^8.2.2"
+pytest-factoryboy = "^2.7.0"
+pytest-django = "^4.8.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -25,6 +28,8 @@ build-backend = "poetry.core.masonry.api"
 target-version = ['py311']
 skip-string-normalization = true
 
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "FinTech.settings"
 
 [tool.mypy]
 ignore_missing_imports = true
