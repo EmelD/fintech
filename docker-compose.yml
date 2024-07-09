@@ -18,6 +18,6 @@ services:
       - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: fintech_test
+      MYSQL_DATABASE: test_fintech
       MYSQL_USER: fintech
       MYSQL_PASSWORD: fintech

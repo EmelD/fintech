@@ -1,19 +1,8 @@
-from django.core.management import call_command
-
 import pytest
-
-pytestmark = pytest.mark.django_db
+from django.core.management import call_command
 
 
 @pytest.mark.django_db
 @pytest.fixture(scope='session')
-def django_db_setup():
-    from django.conf import settings
-
-    settings.DATABASES['default']['NAME'] = 'fintech_test'
-    settings.DATABASES['default']['PORT'] = '3307'
-
+def db_setup() -> None:
     call_command('migrate')
-
-    yield
-

@@ -320,6 +320,17 @@ files = [
 ]
 
 [[package]]
+name = "pampy"
+version = "0.3.0"
+description = "The Pattern Matching for Python you always dreamed of"
+optional = false
+python-versions = ">3.6"
+files = [
+    {file = "pampy-0.3.0-py3-none-any.whl", hash = "sha256:304470a6562173096fc88c22dc0ab50401ca2e3875a8725ee510759ec8ba58ff"},
+    {file = "pampy-0.3.0.tar.gz", hash = "sha256:82054212e4478fc22163c55321a3583eda9918aff4440eed6c197e872a2a667b"},
+]
+
+[[package]]
 name = "pathspec"
 version = "0.12.1"
 description = "Utility library for gitignore style pattern matching of file paths."
@@ -514,4 +525,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f3b4e18470a30c9a2d29fc459c6e675731db5248ac0dd53634995f34912ed271"
+content-hash = "56b2e307a7e7e2548991907b8a34ff0d8985f25c9c3ba00b0cc096914af7e82e"

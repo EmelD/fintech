@@ -19,6 +19,7 @@ isort = "^5.13.2"
 pytest = "^8.2.2"
 pytest-factoryboy = "^2.7.0"
 pytest-django = "^4.8.0"
+pampy = "^0.3.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -29,7 +30,7 @@ target-version = ['py311']
 skip-string-normalization = true
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "FinTech.settings"
+DJANGO_SETTINGS_MODULE = "FinTech.test_settings"
 
 [tool.mypy]
 ignore_missing_imports = true
@@ -44,7 +45,8 @@ warn_redundant_casts = true
 exclude = [
     '.migrations.',
     'manage.py',
-    'FinTech.settings.py'
+    'FinTech.settings.py',
+    'FinTech.test_settings.py',
 ]
 
 
@@ -61,16 +63,3 @@ skip = [
     '.ipython',
     '.venv',
 ]
-
-
-[tool.flake8]
-ignore = "D203,F403,F401,W503,W605"
-exclude = [
-    '.git',
-    '.pytest_cache',
-    '.idea',
-    '.venv',
-    '__pycache__',
-]
-max-complexity = 10
-max-line-length = 120
